@@ -1,0 +1,1514 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2017 10:31:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WILLIAMSON"
+  DTS:CreatorName="WILLIAMSON\fease"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{930501C5-8242-4529-93AA-93925182255C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="DurhamCrime2017"
+  DTS:VersionGUID="{F4C7696C-AAA1-41CF-A4C4-78144B0DE21D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{46582816-06B1-4828-A4DF-E1D3B9F1F186}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=OutlierDetection;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8A316575-87BE-4E9E-A145-3ADE96C8E3AB}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SourceCode\OutlierDetection\Data\DurhamCrime2017.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Geo Point"
+              DTS:DTSID="{D564C04E-61D3-4128-B96A-D23630FE48A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="INCI_ID"
+              DTS:DTSID="{E5E7E5E5-6596-459A-92FE-8B158EF531B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE_REPT"
+              DTS:DTSID="{346B7EE5-35FF-409A-9719-E33739D0EAD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUR_REPT"
+              DTS:DTSID="{67A19E7C-EFE7-484D-98FF-9AD494D9EED2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YEARSTAMP"
+              DTS:DTSID="{BB4C8B80-E780-45C3-BE4F-97C9DA4744F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MONTHSTAMP"
+              DTS:DTSID="{6B03B9E4-D71F-43C4-976A-CAE989500763}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE_OCCU"
+              DTS:DTSID="{500B84D3-2F66-44CF-B03A-34EDCDDDB7A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOW1"
+              DTS:DTSID="{0408E4D7-8332-470E-8F6B-9D534DD28D5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUR_OCCU"
+              DTS:DTSID="{518D85E2-49B4-45F8-8714-8B70293FA765}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE_FND"
+              DTS:DTSID="{2BA14C7C-0636-454B-A333-6EF6FD9F2608}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUR_FND"
+              DTS:DTSID="{73DDBD4A-1E6C-40DC-9765-3512EFB4C645}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOW2"
+              DTS:DTSID="{7E47739A-6484-4F49-BC18-82EDDD3F2688}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REPORTEDAS"
+              DTS:DTSID="{836A66C8-F002-479A-97C0-07660214EAC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UCR_CODE"
+              DTS:DTSID="{CA0766BF-BBE6-4A6F-83D5-A57932774774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CHRGDESC"
+              DTS:DTSID="{F1AE54F5-FAAD-4317-8B51-7D8DB81CC931}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CSSTATUS"
+              DTS:DTSID="{A04340A2-0E6F-4D86-B9E9-B99CE0EB1B40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CSSTATUSDT"
+              DTS:DTSID="{0A89E6A9-768C-47DB-BEC6-907A06F498A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDTIME"
+              DTS:DTSID="{8330D333-DE59-4D0B-8E6D-4A1A135EA227}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REVIEWDATE"
+              DTS:DTSID="{E7CEE344-204D-4B21-95C9-E23B3C273A72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UCR_TYPE_O"
+              DTS:DTSID="{E12D76A8-6E25-4BD3-B0FF-7E556FE88EC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DIST"
+              DTS:DTSID="{B01CF71E-02F1-46D3-BFB8-A722339A780B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STRDATE"
+              DTS:DTSID="{C6CEC3C7-4ABC-43A8-ABDE-E7E38BB6C503}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BIG_ZONE"
+              DTS:DTSID="{D91ABE83-1BF3-4547-B281-19ED0BB58E1E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{89DBF5C6-002B-4A92-9730-75EDA34DD30A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[MONTHSTAMP]"
+                      cachedDataType="i1"
+                      cachedName="MONTHSTAMP"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[MONTHSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CSSTATUS]"
+                      cachedDataType="i1"
+                      cachedName="CSSTATUS"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[UCR_TYPE_O]"
+                      cachedDataType="i1"
+                      cachedName="UCR_TYPE_O"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_TYPE_O]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[DIST]"
+                      cachedDataType="i1"
+                      cachedName="DIST"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DIST]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[MONTHSTAMP]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[MONTHSTAMP]"
+                      name="MONTHSTAMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[MONTHSTAMP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CSSTATUS]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CSSTATUS]"
+                      name="CSSTATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUS]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UCR_TYPE_O]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UCR_TYPE_O]"
+                      name="UCR_TYPE_O"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_TYPE_O]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DIST]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DIST]"
+                      name="DIST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DIST]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - DurhamCrime2017"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - DurhamCrime2017"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Durham2017].[DurhamCrime2017]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[Geo Point]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Geo Point"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[Geo Point]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[Geo Point]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[INCI_ID]"
+                      cachedDataType="i4"
+                      cachedName="INCI_ID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[INCI_ID]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[INCI_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DATE_REPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATE_REPT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_REPT]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_REPT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[HOUR_REPT]"
+                      cachedDataType="i2"
+                      cachedName="HOUR_REPT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_REPT]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_REPT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[YEARSTAMP]"
+                      cachedDataType="i2"
+                      cachedName="YEARSTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[YEARSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[YEARSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[MONTHSTAMP]"
+                      cachedDataType="i2"
+                      cachedName="MONTHSTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[MONTHSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[MONTHSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DATE_OCCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATE_OCCU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_OCCU]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_OCCU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DOW1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="DOW1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DOW1]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[HOUR_OCCU]"
+                      cachedDataType="i2"
+                      cachedName="HOUR_OCCU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_OCCU]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_OCCU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DATE_FND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATE_FND"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_FND]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_FND]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[HOUR_FND]"
+                      cachedDataType="i2"
+                      cachedName="HOUR_FND"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_FND]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_FND]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DOW2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="DOW2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DOW2]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[REPORTEDAS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="REPORTEDAS"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[REPORTEDAS]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REPORTEDAS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[UCR_CODE]"
+                      cachedDataType="i2"
+                      cachedName="UCR_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[UCR_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_CODE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[CHRGDESC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="CHRGDESC"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CHRGDESC]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CHRGDESC]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[CSSTATUS]"
+                      cachedDataType="i2"
+                      cachedName="CSSTATUS"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CSSTATUS]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CSSTATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[CSSTATUSDT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CSSTATUSDT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CSSTATUSDT]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUSDT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[ADDTIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ADDTIME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[ADDTIME]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[ADDTIME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[REVIEWDATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="REVIEWDATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[REVIEWDATE]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REVIEWDATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[UCR_TYPE_O]"
+                      cachedDataType="i2"
+                      cachedName="UCR_TYPE_O"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[UCR_TYPE_O]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UCR_TYPE_O]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[DIST]"
+                      cachedDataType="i2"
+                      cachedName="DIST"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DIST]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DIST]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[STRDATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STRDATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[STRDATE]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[STRDATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].Columns[BIG_ZONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BIG_ZONE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[BIG_ZONE]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[BIG_ZONE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[Geo Point]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Geo Point" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[INCI_ID]"
+                      dataType="i4"
+                      name="INCI_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_REPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_REPT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_REPT]"
+                      dataType="i2"
+                      name="HOUR_REPT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[YEARSTAMP]"
+                      dataType="i2"
+                      name="YEARSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[MONTHSTAMP]"
+                      dataType="i2"
+                      name="MONTHSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_OCCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_OCCU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DOW1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DOW1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_OCCU]"
+                      dataType="i2"
+                      name="HOUR_OCCU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DATE_FND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_FND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[HOUR_FND]"
+                      dataType="i2"
+                      name="HOUR_FND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DOW2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DOW2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[REPORTEDAS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REPORTEDAS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[UCR_CODE]"
+                      dataType="i2"
+                      name="UCR_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CHRGDESC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="CHRGDESC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CSSTATUS]"
+                      dataType="i2"
+                      name="CSSTATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[CSSTATUSDT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CSSTATUSDT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[ADDTIME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDTIME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[REVIEWDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REVIEWDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[UCR_TYPE_O]"
+                      dataType="i2"
+                      name="UCR_TYPE_O" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[DIST]"
+                      dataType="i2"
+                      name="DIST" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[STRDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input].ExternalColumns[BIG_ZONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BIG_ZONE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - DurhamCrime2017_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[Geo Point]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[Geo Point]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[Geo Point]"
+                      name="Geo Point"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[INCI_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[INCI_ID]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[INCI_ID]"
+                      name="INCI_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_REPT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_REPT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_REPT]"
+                      name="DATE_REPT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_REPT]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_REPT]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_REPT]"
+                      name="HOUR_REPT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[YEARSTAMP]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[YEARSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[YEARSTAMP]"
+                      name="YEARSTAMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[MONTHSTAMP]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[MONTHSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[MONTHSTAMP]"
+                      name="MONTHSTAMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_OCCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_OCCU]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_OCCU]"
+                      name="DATE_OCCU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DOW1]"
+                      length="3"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW1]"
+                      name="DOW1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_OCCU]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_OCCU]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_OCCU]"
+                      name="HOUR_OCCU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_FND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_FND]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DATE_FND]"
+                      name="DATE_FND"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_FND]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_FND]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[HOUR_FND]"
+                      name="HOUR_FND"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DOW2]"
+                      length="3"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DOW2]"
+                      name="DOW2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REPORTEDAS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[REPORTEDAS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REPORTEDAS]"
+                      name="REPORTEDAS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_CODE]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[UCR_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_CODE]"
+                      name="UCR_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CHRGDESC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CHRGDESC]"
+                      length="150"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CHRGDESC]"
+                      name="CHRGDESC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUS]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CSSTATUS]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUS]"
+                      name="CSSTATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUSDT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CSSTATUSDT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[CSSTATUSDT]"
+                      name="CSSTATUSDT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[ADDTIME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[ADDTIME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[ADDTIME]"
+                      name="ADDTIME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REVIEWDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[REVIEWDATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[REVIEWDATE]"
+                      name="REVIEWDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_TYPE_O]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[UCR_TYPE_O]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[UCR_TYPE_O]"
+                      name="UCR_TYPE_O"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DIST]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DIST]"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[DIST]"
+                      name="DIST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[STRDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[STRDATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[STRDATE]"
+                      name="STRDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[BIG_ZONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[BIG_ZONE]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].Columns[BIG_ZONE]"
+                      name="BIG_ZONE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[Geo Point]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Geo Point" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[INCI_ID]"
+                      dataType="i4"
+                      name="INCI_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_REPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_REPT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_REPT]"
+                      dataType="i2"
+                      name="HOUR_REPT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[YEARSTAMP]"
+                      dataType="i2"
+                      name="YEARSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[MONTHSTAMP]"
+                      dataType="i1"
+                      name="MONTHSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_OCCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_OCCU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DOW1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DOW1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_OCCU]"
+                      dataType="i2"
+                      name="HOUR_OCCU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DATE_FND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE_FND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[HOUR_FND]"
+                      dataType="i2"
+                      name="HOUR_FND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DOW2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DOW2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[REPORTEDAS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REPORTEDAS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[UCR_CODE]"
+                      dataType="i2"
+                      name="UCR_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CHRGDESC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="CHRGDESC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CSSTATUS]"
+                      dataType="i1"
+                      name="CSSTATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[CSSTATUSDT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CSSTATUSDT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[ADDTIME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDTIME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[REVIEWDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REVIEWDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[UCR_TYPE_O]"
+                      dataType="i1"
+                      name="UCR_TYPE_O" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[DIST]"
+                      dataType="i1"
+                      name="DIST" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[STRDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output].ExternalColumns[BIG_ZONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BIG_ZONE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - DurhamCrime2017.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - DurhamCrime2017_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{72B3AD46-32E1-4EC1-9D36-0C6D9686BD38}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{46582816-06B1-4828-A4DF-E1D3B9F1F186}"
+          SQLTask:SqlStatementSource="CREATE TABLE [Durham2017].[DurhamCrime2017] (&#xA;[Geo Point] varchar(50),&#xA;[INCI_ID] int,&#xA;[DATE_REPT] varchar(50),&#xA;[HOUR_REPT] smallint,&#xA;[YEARSTAMP] smallint,&#xA;[MONTHSTAMP] smallint,&#xA;[DATE_OCCU] varchar(50),&#xA;[DOW1] varchar(3),&#xA;[HOUR_OCCU] smallint,&#xA;[DATE_FND] varchar(50),&#xA;[HOUR_FND] smallint,&#xA;[DOW2] varchar(3),&#xA;[REPORTEDAS] varchar(50),&#xA;[UCR_CODE] smallint,&#xA;[CHRGDESC] varchar(150),&#xA;[CSSTATUS] smallint,&#xA;[CSSTATUSDT] varchar(50),&#xA;[ADDTIME] varchar(50),&#xA;[REVIEWDATE] varchar(50),&#xA;[UCR_TYPE_O] smallint,&#xA;[DIST] smallint,&#xA;[STRDATE] varchar(50),&#xA;[BIG_ZONE] varchar(10)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{546F018A-78DE-416F-BC27-557061FF9AAA\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{546F018A-78DE-416F-BC27-557061FF9AAA}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{546F018A-78DE-416F-BC27-557061FF9AAA}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
