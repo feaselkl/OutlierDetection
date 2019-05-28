@@ -260,7 +260,7 @@ There are several T-SQL constructs which can help us find missing values, includ
 
 What we have:
 * A dependent variable:  the thing whose behavior we want to explain.
-* Independent variables:  the things whose behavior we think explains the dependent variable.
+* Independent variables:  the things whose behavior explains the dependent variable.
 * Known data points relating our independent variable(s) to our dependent variable.
 
 Regression analysis can get complicated, but if you know what the data "ought" to look like, regression can help you confirm or disprove your conjecture.
@@ -333,7 +333,7 @@ Looking at differences within a group can help explain anomalous aggregate behav
 
 ### Box Plots
 
-Box plots are valuable for comparing cohorts, as they show, by group, the median, 25th percentile, 75th percentile, 1.5 * interquartile ranges, and outliers.
+Box plots are valuable for comparing cohorts.
 
 <img src="presentation/assets/image/BoxPlot.png" height="481" width="714" />
 
@@ -443,7 +443,7 @@ Benford's Law is an interesting phenomenon, where the first digit (or two digits
 
 ### Last Digits
 
-Last digits are assumed uniform unless there is a reason to believe otherwise. Example: data from Brian Wansink, former Cornell professor who resigned after numerous issues with fabricating data.
+Last digits are assumed uniform unless there is a reason to believe otherwise.
 
 ![Artificially manipulated last digits in a series.](presentation/assets/image/lastdigits.png)
 
