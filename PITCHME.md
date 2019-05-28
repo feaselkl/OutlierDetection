@@ -47,7 +47,9 @@
 @divend
 
 @div[right-50]
-Transportation fraud in Wake County, North Carolina
+Transportation fraud
+
+Wake County, North Carolina
 @divend
 
 ---
@@ -57,10 +59,6 @@ Transportation fraud in Wake County, North Carolina
 
 @div[left-50]
 An auto parts company, working in conjunction with several county employees, defrauded Wake County of at least $5 million over a multi-year period.
-
-Participants took advantage of lax vendor policy for small purchases and submitted fraudulent invoices, all under the cutoff for further scrutiny.
-
-This fraud went up to the top, to the head of the transportation department.
 @divend
 
 @div[right-50]
@@ -166,7 +164,7 @@ Our basic analysis will focus on a few important areas:
 
 ---
 
-### Basic Analysis -- Summary Analysis
+### Summary Analysis
 
 Summary analysis looks at things like row counts, data types, and keys.
 
@@ -174,7 +172,7 @@ In SQL Server, here is some of what I do to learn about a new database.
 
 ---
 
-### Step 1:  Review the Largest Tables
+### Step 1:  Review Large Tables
 
 @div[left-50]
 ![Navigate to the Disk Usage by Table report.](presentation/assets/image/DiskUsageByTableReport.png)
@@ -212,21 +210,23 @@ In SQL Server, here is some of what I do to learn about a new database.
 
 ### Step 4:  Rinse and Repeat
 
-![Navigate to the Disk Usage by Table report.](presentation/assets/image/DiskUsageByTableReport.png)
+![The report results.](presentation/assets/image/ReportResults.png)
 
 We’ve yet to see `Calendar`, so that might be our next stop.  Or maybe `VendorExpenseCategory`.
 
 ---
 
-### Basic Analysis -- Summary Analysis
+### Summary Analysis
 
 Creating a database diagram is also helpful here if you don’t have one.
+
+<img src="presentation/assets/image/forensicdatabasediagram.png" height="483" width="904" />
 
 ![A database diagram representing the data we will use.](presentation/assets/image/forensicdatabasediagram.png)
 
 ---
 
-### Basic Analysis -- Growth Analysis
+### Growth Analysis
 
 Growth analysis looks at changes in ratios over time. Our goal is to look for major changes which look to be far outside the norm.
 
@@ -260,7 +260,7 @@ There are several T-SQL constructs which can help us find missing values, includ
 
 What we have:
 * A dependent variable:  the thing whose behavior we want to explain.
-* One or more independent variables:  the things whose behavior we think explains the dependent variable.
+* Independent variables:  the things whose behavior we think explains the dependent variable.
 * Known data points relating our independent variable(s) to our dependent variable.
 
 Regression analysis can get complicated, but if you know what the data "ought" to look like, regression can help you confirm or disprove your conjecture.
@@ -335,7 +335,7 @@ Looking at differences within a group can help explain anomalous aggregate behav
 
 Box plots are valuable for comparing cohorts, as they show, by group, the median, 25th percentile, 75th percentile, 1.5 * interquartile ranges, and outliers.
 
-![A box plot showing aggregate numbers of invoices by month and year.](presentation/assets/image/BoxPlot.png)
+<img src="presentation/assets/image/BoxPlot.png" height="481" width="714" />
 
 ---
 
@@ -352,8 +352,6 @@ Something interesting when analyzing a cohort is to look for clustering around c
 Going back to our Wake County example, there was a cluster around $2500, as that was the cutoff point after which a second person needed to sign off on a payment order.
 
 In our example, our cutoff point will be $1000, after which employees need two signatures to complete an invoice.
-
----
 
 ---?image=presentation/assets/background/demo.jpg&size=cover&opacity=20
 
@@ -421,8 +419,6 @@ Be aware of floating holidays like Easter, as well as observed holidays like Chr
 
 One high-level analysis of values is to get a count of "round numbers." We group into types based on the number of 0s at the end (ignoring cents): $5000 (type 3), $10,200 (type 2), $180 (type 1), $17,999 (type 0).
 
----
-
 ---?image=presentation/assets/background/demo.jpg&size=cover&opacity=20
 
 ### Demo Time
@@ -439,8 +435,6 @@ Benford's Law is an interesting phenomenon, where the first digit (or two digits
 ![The frequency of the first digit of each number in a series.](presentation/assets/image/DigitFrequency.png)
 @divend
 
----
-
 ---?image=presentation/assets/background/demo.jpg&size=cover&opacity=20
 
 ### Demo Time
@@ -449,7 +443,7 @@ Benford's Law is an interesting phenomenon, where the first digit (or two digits
 
 ### Last Digits
 
-As we saw in the last demo, Benford's Law doesn't apply to the last digit in a sequence; instead, we assume those are uniform unless there is a reason to believe otherwise. Example: data from Brian Wansink, former Cornell professor who resigned after numerous issues with fabricating data.
+Last digits are assumed uniform unless there is a reason to believe otherwise. Example: data from Brian Wansink, former Cornell professor who resigned after numerous issues with fabricating data.
 
 ![Artificially manipulated last digits in a series.](presentation/assets/image/lastdigits.png)
 
