@@ -131,7 +131,7 @@ Fake data lets us understand the key principles without getting lost in hundreds
 
 ![A database diagram representing the data we will use.](presentation/assets/image/forensicdatabasediagram.png)
 
----?image=presentation/assets/background/audit.jpg&size=cover&opacity=20
+---?image=presentation/assets/background/audit.jpg&size=cover&opacity=30
 
 ### Know Your Data -- The Scenario
 
@@ -218,7 +218,7 @@ Creating a database diagram is also helpful here if you don’t have one.
 
 ![A database diagram representing the data we will use.](presentation/assets/image/forensicdatabasediagram.png)
 
----?image=presentation/assets/background/aerial-water.jpg&size=cover&opacity=20
+---?image=presentation/assets/background/growth.jpg&size=cover&opacity=20
 
 ### Growth Analysis
 
@@ -287,7 +287,7 @@ Looking at top-level aggregates or a single slice (customer, vendor, group) migh
 
 A data set can be sliced many ways, so there could be a large number of relevant cohorts.
 
----?image=presentation/assets/background/cardinal.jpg&size=cover&opacity=20
+---?image=presentation/assets/background/cardinal.jpg&size=cover&opacity=25
 
 ### Duplicates and Cardinality
 
