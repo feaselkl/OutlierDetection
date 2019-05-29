@@ -91,7 +91,7 @@ In the end, several participants pled guilty and served jail time.
 Wake County was able to claw back $5 million and Barnes Motor & Parts paid back $3 million, including a $2.5 million criminal fine.
 @divend
 
----
+---?image=presentation/assets/background/library.jpg&size=cover&opacity=20
 
 ### A Case Study --- A Quick Story
 
@@ -131,7 +131,7 @@ Fake data lets us understand the key principles without getting lost in hundreds
 
 ![A database diagram representing the data we will use.](presentation/assets/image/forensicdatabasediagram.png)
 
----
+---?image=presentation/assets/background/audit.jpg&size=cover&opacity=20
 
 ### Know Your Data -- The Scenario
 
@@ -151,7 +151,7 @@ All we have going in is a data model and a login with read-only access.  Let’s
 4. Time Series Analysis
 5. Numeral Analysis
 
----
+---?image=presentation/assets/background/folders.jpg&size=cover&opacity=20
 
 ### Basic Analysis
 
@@ -162,7 +162,7 @@ Our basic analysis will focus on a few important areas:
 * Gaps In Data
 * Regression Analysis
 
----
+---?image=presentation/assets/background/aerial-water.jpg&size=cover&opacity=20
 
 ### Summary Analysis
 
@@ -174,13 +174,7 @@ In SQL Server, here is some of what I do to learn about a new database.
 
 ### Step 1:  Review Large Tables
 
-@div[left-50]
-![Navigate to the Disk Usage by Table report.](presentation/assets/image/DiskUsageByTableReport.png)
-@divend
-
-@div[right-50]
-![The report results.](presentation/assets/image/ReportResults.png)
-@divend
+![Navigate to the Disk Usage by Table report.  Then review the largest tables.](presentation/assets/image/ReviewLargestTables.png)
 
 ---
 
@@ -224,7 +218,7 @@ Creating a database diagram is also helpful here if you don’t have one.
 
 ![A database diagram representing the data we will use.](presentation/assets/image/forensicdatabasediagram.png)
 
----
+---?image=presentation/assets/background/aerial-water.jpg&size=cover&opacity=20
 
 ### Growth Analysis
 
@@ -236,9 +230,9 @@ Typically, we will perform growth analysis against important additive measures: 
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/sinkhole.jpg&size=cover&opacity=20
 
-### Basic Analysis -- Gaps
+### Gap Analysis
 
 Sometimes, it's the **lack** of a value which is interesting. We want to look for sequences which should be complete but aren't--examples include receipts, purchase orders, check numbers, invoice numbers, etc.
 
@@ -248,15 +242,15 @@ There are several T-SQL constructs which can help us find missing values, includ
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/surfer-crash.jpg&size=cover&opacity=20
 
-### Basic Analysis -- Gaps
+### Gap Analysis
 
 **Warning:** if you generate invoice numbers (for example) using a SQL Server identity integer, gaps may occur when transactions get rolled back. It may be better to use a surrogate key for storage but generate an invoice number only after the new transaction saves successfully.
 
----
+---?image=presentation/assets/background/notebook.jpg&size=cover&opacity=20
 
-### Basic Analysis -- Regression
+### Regression Analysis
 
 What we have:
 * A dependent variable:  the thing whose behavior we want to explain.
@@ -285,7 +279,7 @@ Regression analysis can get complicated, but if you know what the data "ought" t
 4. Time Series Analysis
 5. Numeral Analysis
 
----
+---?image=presentation/assets/background/slices.jpg&size=cover&opacity=20
 
 ### Cohort Analysis
 
@@ -293,7 +287,7 @@ Looking at top-level aggregates or a single slice (customer, vendor, group) migh
 
 A data set can be sliced many ways, so there could be a large number of relevant cohorts.
 
----
+---?image=presentation/assets/background/cardinal.jpg&size=cover&opacity=20
 
 ### Duplicates and Cardinality
 
@@ -303,13 +297,13 @@ First, one-time codes or unenforced unique keys can show where the same data sho
 
 Second, things which are very close but not quite the same, like typos (e.g., “Fundation” instead of “Foundation”).
 
----
+---?image=presentation/assets/background/engineering.jpg&size=cover&opacity=20
 
 ### Duplicates and Cardinality
 
 There are several measures for the similarity of two text phrases, including Levenshtein distance, soundex, and even pattern matching using LIKE. Depending upon the level of sophistication necessary, getting the similarity of two items based on text descriptors can take quite a bit of effort!
 
----
+---?image=presentation/assets/background/duplicates.jpg&size=cover&opacity=20
 
 ### Duplicates and Cardinality
 
@@ -337,13 +331,13 @@ Box plots are valuable for comparing cohorts.
 
 <img src="presentation/assets/image/BoxPlot.png" height="481" width="714" />
 
----
+---?image=presentation/assets/background/outlier.jpg&size=cover&opacity=20
 
 ### Outliers
 
 Plotting a trend and looking for outliers (defined either in a technical sense or in the general sense of "well outside the norm") can dig up strange behavior. Real data sets will always have outliers, though, so the existence of outliers is not in itself suspicious.
 
----
+---?image=presentation/assets/background/clusters.jpg&size=cover&opacity=20
 
 ### Clustering Behavior
 
@@ -369,7 +363,7 @@ In our example, our cutoff point will be $1000, after which employees need two s
 4. **Time Series Analysis**
 5. Numeral Analysis
 
----
+---?image=presentation/assets/background/time.jpg&size=cover&opacity=20
 
 ### Simple Time Series
 
@@ -379,13 +373,13 @@ Going back to the Wake County example, auditors could have found something suspi
 
 Other time series examples include the sums of measures by day or month, such as revenue, cost, number of orders, and amounts of refunds.
 
----
+---?image=presentation/assets/background/balance.jpg&size=cover&opacity=20
 
 ### Balances
 
 For semi-additive measures such as account balances, look at the state of the measure at fixed points in time, such as looking at account balances every day at 9 PM UTC.
 
----
+---?image=presentation/assets/background/calendar.jpg&size=cover&opacity=20
 
 ### Date Checks
 
@@ -393,7 +387,7 @@ Look for "odd" date combinations: order date later than ship date? Adjustments a
 
 Look at behavior based on date: focus on day of week, day of month, weekdays vs weekends, mid-week versus early week vs late week. Sum and count measures grouped on these date slices.
 
----
+---?image=presentation/assets/background/holiday.jpg&size=cover&opacity=20
 
 ### Holidays
 
@@ -413,7 +407,7 @@ Be aware of floating holidays like Easter, as well as observed holidays like Chr
 4. Time Series Analysis
 5. **Numeral Analysis**
 
----
+---?image=presentation/assets/background/polyhedron2.jpg&size=cover&opacity=20
 
 ### Round Numbers
 
@@ -447,7 +441,7 @@ Last digits are assumed uniform unless there is a reason to believe otherwise.
 
 ![Artificially manipulated last digits in a series.](presentation/assets/image/lastdigits.png)
 
----
+---?image=presentation/assets/background/wrappingup.jpg&size=cover&opacity=20
 
 @title[Wrapping Up]
 
