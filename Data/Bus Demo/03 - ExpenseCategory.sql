@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE dbo.ExpenseCategory
 (
 	ExpenseCategoryID TINYINT NOT NULL,

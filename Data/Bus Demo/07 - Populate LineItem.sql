@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE #ValuePerCategory
 (
 	ExpenseCategoryID TINYINT NOT NULL,
@@ -92,7 +94,6 @@ WHERE
 	c.Date >= '2011-01-01'
 	AND c.Date < '2019-01-01'
 	AND c.IsWeekend = 0
-	AND c.HolidayName IS NULL
 	AND b.DateFirstInService <= c.Date
 	AND ISNULL(b.DateRetired, '9999-12-31') > c.Date
 	AND r.InclusionThreshold < @InclusionThreshold;
@@ -152,7 +153,6 @@ WHERE
 	c.Date >= '2018-02-09'
 	AND c.Date < '2018-10-14'
 	AND c.IsWeekend = 0
-	AND c.HolidayName IS NULL
 	AND b.DateFirstInService <= c.Date
 	AND ISNULL(b.DateRetired, '9999-12-31') > c.Date
 	AND vec.VendorID = 5

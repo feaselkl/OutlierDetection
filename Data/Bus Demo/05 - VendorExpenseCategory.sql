@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE dbo.VendorExpenseCategory
 (
 	VendorID INT NOT NULL,

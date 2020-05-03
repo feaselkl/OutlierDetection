@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE dbo.Vendor
 (
 	VendorID INT IDENTITY (1, 1) NOT NULL,

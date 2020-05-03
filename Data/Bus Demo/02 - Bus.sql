@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE dbo.Bus
 (
 	BusID INT NOT NULL,

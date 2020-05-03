@@ -1,3 +1,5 @@
+USE [ForensicAccounting]
+GO
 CREATE TABLE dbo.LineItem
 (
 	LineItemID INT NOT NULL,
