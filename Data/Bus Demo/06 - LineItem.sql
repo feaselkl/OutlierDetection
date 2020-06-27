@@ -2,7 +2,7 @@ USE [ForensicAccounting]
 GO
 CREATE TABLE dbo.LineItem
 (
-	LineItemID INT NOT NULL,
+	LineItemID INT IDENTITY(1,1) NOT NULL,
 	BusID INT NOT NULL,
 	VendorID INT NOT NULL,
 	ExpenseCategoryID TINYINT NOT NULL,
