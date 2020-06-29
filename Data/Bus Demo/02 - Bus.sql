@@ -36,6 +36,7 @@ FROM dbo.Calendar c
 	CROSS JOIN ( SELECT TOP(50) object_id FROM sys.all_objects ) ao
 WHERE
 	c.CalendarDayOfYear = 1
+	AND c.Date >= '2011-01-01'
 	AND c.Date < '2019-01-01';
 
 -- Retire ~30 buses each year
@@ -52,6 +53,7 @@ WITH candidates AS
 			ON c.Date > b.DateFirstInService
 	WHERE
 		c.CalendarDayOfYear = 1
+		AND c.Date >= '2011-01-01'
 		AND c.Date < '2019-01-01'
 )
 UPDATE b
